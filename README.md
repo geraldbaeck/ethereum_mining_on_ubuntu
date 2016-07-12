@@ -2,8 +2,8 @@
 
 ### Install [Ubuntu 15.04](http://releases.ubuntu.com/15.04/ubuntu-15.04-server-amd64.iso)
 
-### Install [AMD drivers](https://forum.ethereum.org/discussion/2695/frontier-mining-setup-notes-ubuntu-15-04-geth-v1-0-amd-ethminer
-)
+### Install [AMD drivers](https://forum.ethereum.org/discussion/2695/frontier-mining-setup-notes-ubuntu-15-04-geth-v1-0-amd-ethminer)
+
 ```bash
 sudo apt-get update
 sudo apt-get upgrade -y
@@ -22,16 +22,34 @@ sudo reboot
 ```bash
 sudo apt-get install fglrx-updates
 sudo aticonfig --adapter=all --initial
-aticonfig --list-adapters
+sudo aticonfig --list-adapters
 ```
+Q: Why do i have to sudo aticonfig?
 
-# Other Miners
-- [Claymore](https://bitcointalk.org/index.php?topic=1433925.0)
+### Install the [genoil miner](https://github.com/Genoil/cpp-ethereum#building-on-ubuntu)
+
+```bash
+sudo apt-get -y install software-properties-common
+add-apt-repository -y ppa:ethereum/ethereum
+sudo apt-get update
+sudo apt-get install git cmake libcryptopp-dev libleveldb-dev libjsoncpp-dev libjson-rpc-cpp-dev libboost-all-dev libgmp-dev libreadline-dev libcurl4-gnutls-dev ocl-icd-libopencl1 opencl-headers mesa-common-dev libmicrohttpd-dev build-essential -y
+git clone https://github.com/Genoil/cpp-ethereum/
+cd cpp-ethereum/
+mkdir build
+cd build
+cmake -DBUNDLE=miner ..
+make -j8
+```
+You can then find the executable in the ethminer subfolder.
+TODO: make the executeable globally accessible
+
+#### Other Miners
+- [Claymore](https://bitcointalk.org/index.php?topic=1433925.0)  # did only work with a very low hashrate, did not investigate further
 
 
-# Overclocking info
+#### Overclocking info
 https://forum.ethereum.org/discussion/5302/mining-with-ubuntu-server-do-i-really-need-x-gnome-the-graphical-environment
 
 
-### Further readings:
+#### Further readings:
 [Stratum Proxy](https://github.com/slush0/stratum-mining-proxy#installation-on-linux-using-git) - Not needed, I guess
