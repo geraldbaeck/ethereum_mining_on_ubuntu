@@ -99,5 +99,24 @@ sudo ~/Sia-GPU-Miner/sia-gpu-miner -I 8
 I had to restart the get the miner running before it stuck on "Initializing..."
 you probably have to unlock your wallet before
 
-### Using a pool (not tested)
+### Use the [SiaMining](http://siamining.com/) pool (not tested)
+```bash
+export GPU_FORCE_64BIT_PTR=0
+export GPU_MAX_HEAP_SIZE=100
+export GPU_USE_SYNC_OBJECTS=1
+export GPU_MAX_ALLOC_PERCENT=100
+export GPU_SINGLE_ALLOC_PERCENT=100
+WALLET="0xd9d9aBe3e89123c171fF137bA50e81EC85dA8a2e"
+WORKER="XFXR9390Test"
+INTENSITY=25
+sudo ~/Sia-GPU-Miner/sia-gpu-miner -I $INTENSITY -H siamining.com -P 9980 -Q "address=$WALLET&worker=$WORKER"
+```
+
+Look at your stats at: http://siamining.com/addresses/a051efc7151d90db02761078da0b49328b3b15296bd9e22dd8daf40b0da65c47615e38a74a15
+
+
+see also:
 - https://nerdralph.blogspot.co.at/2016/07/mining-sia-coin-on-ubuntu.html
+
+other pools:
+- [nanopool](http://sia.nanopool.org/) has EU Server und 1% less fee
