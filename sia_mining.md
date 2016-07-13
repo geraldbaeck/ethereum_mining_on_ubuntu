@@ -64,23 +64,23 @@ cd ~/Sia
 #### Create new wallet
 *Copy down the wallet seed/password!*
 ```bash
-./siac wallet init
+~/Sia/siac wallet init
 ```
 
 #### Unlock wallet (might take upwards to a minute, but probably less)
 ```bash
-./siac wallet unlock
+~/Sia/siac wallet unlock
 ```
 
 #### Create a new wallet address
 *Copy down the new wallet address!*
 ```bash
-./siac wallet address
+~/Sia/siac wallet address
 ```
 
 #### configure the host for now do not take any contracts
 ```bash
-./siac host config acceptingcontracts false
+~/Sia/siac host config acceptingcontracts false
 exit
 ```
 
@@ -95,3 +95,9 @@ make
 ```bash
 sudo ~/Sia-GPU-Miner/sia-gpu-miner -I 8
 ```
+[configuration options](https://github.com/Genoil/Sia-GPU-Miner#configuration)
+I had to restart the get the miner running before it stuck on "Initializing..."
+you probably have to unlock your wallet before
+
+### Using a pool (not tested)
+- https://nerdralph.blogspot.co.at/2016/07/mining-sia-coin-on-ubuntu.html
