@@ -16,7 +16,7 @@ sudo nano /etc/supervisor/supervisord.conf
 ```
 
 #### Copy this at the bottom of supervisord.conf
-``shell
+```bash
 [program:siad]
 command=/home/siad/Sia/siad
 autostart=true
