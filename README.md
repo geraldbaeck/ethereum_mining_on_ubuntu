@@ -74,13 +74,24 @@ TODO:
 - generate a worker name
 - get wallet address from remote server
 
+
+
+
+
 #### Other Miners
 - [Claymore](https://bitcointalk.org/index.php?topic=1433925.0)  # did only work with a very low hashrate, did not investigate further
 
 
-#### Overclocking info
-http://www.overclock.net/t/517861/how-to-overclocking-ati-cards-in-linux
-https://forum.ethereum.org/discussion/5302/mining-with-ubuntu-server-do-i-really-need-x-gnome-the-graphical-environment
+#### Overclocking
+
+If you get "ERROR - X needs to be running" do a
+```bash
+sudo startx &
+```
+
+#### Links:
+- http://www.overclock.net/t/517861/how-to-overclocking-ati-cards-in-linux
+- https://forum.ethereum.org/discussion/5302/mining-with-ubuntu-server-do-i-really-need-x-gnome-the-graphical-environment
 
 
 #### Further readings:
