@@ -3,9 +3,8 @@
 
 ### Download and install Sia binaries
 ```bash
-wget https://github.com/NebulousLabs/Sia/releases/download/v1.0.0/Sia-v1.0.0-linux-amd64.tar.gz
-tar xvzf ./Sia-v1.0.0-linux-amd64.tar.gz
-mv Sia-v1.0.0-linux-amd64/ Sia/
+wget -qO- https://github.com/NebulousLabs/Sia/releases/download/v1.0.0/Sia-v1.0.0-linux-amd64.tar.gz | tar xvz
+mv ~/Sia-v1.0.0-linux-amd64 ~/Sia
 exit
 ```
 
@@ -18,15 +17,15 @@ sudo nano /etc/supervisor/supervisord.conf
 #### Copy this at the bottom of supervisord.conf
 ```bash
 [program:siad]
-command=/home/siad/Sia/siad
+command=/home/geraldbaeck/Sia/siad
 autostart=true
 autorestart=true
-user=siad
-directory=/home/siad/Sia
+user=geraldbaeck
+directory=/home/geraldbaeck/Sia
 priority=10
 stopwaitsecs=60
-stdout_logfile=/home/siad/Sia/siad-stdout.log
-stderr_logfile=/home/siad/Sia/siad-stderr.log
+stdout_logfile=/home/geraldbaeck/Sia/siad-stdout.log
+stderr_logfile=/home/geraldbaeck/Sia/siad-stderr.log
 ```
 
 #### Configure firewall and restart supervisor
@@ -65,6 +64,12 @@ cd ~/Sia
 *Copy down the wallet seed/password!*
 ```bash
 ~/Sia/siac wallet init
+```
+
+### Or use an existing wallet
+*prepare your seed*
+```bash
+~/Sia/siac wallet load
 ```
 
 #### Unlock wallet (might take upwards to a minute, but probably less)
