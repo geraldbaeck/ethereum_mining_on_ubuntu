@@ -7,4 +7,4 @@ So here are the guides:
 - Install and run [Ethereum mining software](ethereum_mining.md)
 - Alternatively you could also [mine SIACoins](sia_mining.md), which is sometimes more profitable.
 
-I am by no means an expert on mining, Ubuntu or anything else. I am just a guy who copy and pasted all the guides which worked for me together in one place. But if you have anything to add or find any mistakes, please commit via git or just write an email to [gerald@baeck.at](mailto:gerald@baeck.at).
+I am by no means an expert on mining, Ubuntu or anything else. I am just a guy who copied and pasted all the guides which worked for me together in one place. If you have anything to add or correct, please commit via git or just write an email to [gerald@baeck.at](mailto:gerald@baeck.at).
