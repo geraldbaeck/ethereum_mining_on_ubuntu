@@ -116,6 +116,7 @@ WORKER="XFXR9390Test"
 INTENSITY=25
 sudo ~/Sia-GPU-Miner/sia-gpu-miner -I $INTENSITY -H siamining.com -P 9980 -Q "address=$WALLET&worker=$WORKER"
 ```
+User [bitcanuk](https://www.reddit.com/user/bitcanuck) [commented on reddit](https://www.reddit.com/r/siacoin/comments/4smcqn/another_walktrough_for_sia_mining_with_ubuntu/d5bo96j) that setting those GPU variables is not really necessary for mining SIACoins.
 
 ##### Look at your stats at:
 - http://siamining.com/addresses/a051efc7151d90db02761078da0b49328b3b15296bd9e22dd8daf40b0da65c47615e38a74a15
