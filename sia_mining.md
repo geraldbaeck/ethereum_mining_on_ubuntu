@@ -106,9 +106,10 @@ you probably have to unlock your wallet before
 
 ### Use the [SiaMining](http://siamining.com/) pool (still testing)
 ```bash
+export DISPLAY=:0
 export GPU_FORCE_64BIT_PTR=0
-export GPU_MAX_HEAP_SIZE=100
-export GPU_USE_SYNC_OBJECTS=1
+export GPU_MAX_HEAP_SIZE=100  # 100 means that 100% of GPU memory are free to use for OpenCL see http://developer.amd.com/knowledge-base/?ID=123
+export GPU_USE_SYNC_OBJECTS=1  # seems to be useful in a multi GPU environment
 export GPU_MAX_ALLOC_PERCENT=100
 export GPU_SINGLE_ALLOC_PERCENT=100
 WALLET="0xd9d9aBe3e89123c171fF137bA50e81EC85dA8a2e"
@@ -116,7 +117,7 @@ WORKER="XFXR9390Test"
 INTENSITY=25
 sudo ~/Sia-GPU-Miner/sia-gpu-miner -I $INTENSITY -H siamining.com -P 9980 -Q "address=$WALLET&worker=$WORKER"
 ```
-User [bitcanuk](https://www.reddit.com/user/bitcanuck) [commented on reddit](https://www.reddit.com/r/siacoin/comments/4smcqn/another_walktrough_for_sia_mining_with_ubuntu/d5bo96j) that setting those GPU variables is not really necessary for mining SIACoins.
+User [bitcanuk](https://www.reddit.com/user/bitcanuck) [commented on reddit](https://www.reddit.com/r/siacoin/comments/4smcqn/another_walktrough_for_sia_mining_with_ubuntu/d5bo96j) that setting those GPU variables is not really necessary for mining SIACoins. Will be interesting to see, if it makes any difference.
 
 ##### Look at your stats at:
 - http://siamining.com/addresses/a051efc7151d90db02761078da0b49328b3b15296bd9e22dd8daf40b0da65c47615e38a74a15
